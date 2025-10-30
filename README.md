@@ -12,13 +12,6 @@ Uses NLP and trained ML model for accurate classification.
 Simple and user-friendly code structure.
 Can be integrated with any email system or app.
 
-email-phishing-detector/
-│
-├── email_detector.py      # Main file that checks if an email is phishing or safe
-├── vectorizer.pkl         # Pre-trained text vectorizer (used to transform messages)
-├── model.pkl              # Trained machine learning model
-├── README.md              # Project documentation
-└── sample_emails.txt      # Example email messages (optional)
 
 ⚙️ How It Works
 
