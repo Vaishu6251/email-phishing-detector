@@ -1,0 +1,10 @@
+EMAIL PHISHING DETECTION REPORT
+---------------------------------
+Date & Time: 30-10-2025 12:35:35 PM
+Result: Safe Email ✅
+Confidence: 66.32%
+
+No links found.
+
+
+--- End of Report ---

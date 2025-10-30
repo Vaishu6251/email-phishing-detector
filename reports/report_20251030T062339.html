@@ -1,0 +1,151 @@
+
+        <html><body style='font-family: Arial;'>
+        <h1>Email Phishing Detector Report</h1>
+        <p><b>Time (UTC):</b> 2025-10-30 06:23 UTC</p>
+        <h2>Input</h2>
+        <pre>Delivered-To: vaishnavinerella88@gmail.com
+Received: by 2002:a05:6674:100c:b0:664:2ca9:e804 with SMTP id qp12csp154967pxc;
+        Tue, 28 Oct 2025 21:36:36 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IG0fQ+W2u3blb8tmEVI7gfKWn54mFzLk5cxE5moWPcjrMolrV/C/64UIkHMWft4u7xIc2Wa
+X-Received: by 2002:ad4:5c84:0:b0:87c:1d41:575d with SMTP id 6a1803df08f44-88009ad8404mr20009126d6.3.1761712595662;
+        Tue, 28 Oct 2025 21:36:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1761712595; cv=none;
+        d=google.com; s=arc-20240605;
+        b=W+RzmQ8wnGjr36pGtzb4gE6VjpWDcM+ThbFdjArTmawGlNVLF8VJJl+NSW7fZqieWa
+         NsRQsCuMYw0Ewy1HPGwvzOxVEY14SVxwR8kJShrOgUey2/XM3ojPoWxMr1wj2/EqS7J0
+         qIBK9PEQGSV7Optwd/w6bucp2EGW9ZrwUJJUZzuwh++EhR+E9z6zTK476iJ0u+oQIn5a
+         SkzpeL58WsnZ3ogTkeO9AQtC0DMQKOufmqfTnh3+iJupvdN2mYS2deRiTnLtKjMbxd2D
+         4PChIH7LfhfsbJbvhAbDyDGcc4LRX/P32tOEKbhnGb5xoVFWRbiR/plpLiUxfghTvKr5
+         Ea6w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:message-id:reply-to:list-unsubscribe-post
+         :list-unsubscribe:mime-version:list-help:date:subject:to:from
+         :dkim-signature;
+        bh=j4/AYJfdgroX8ZTGhC6kL9fKA8+YBEQYUoiUBGfrIqU=;
+        fh=crBY1CsMJwj9+f4mj2oMnxkTsqRj1M3jAicPyhfOtto=;
+        b=fU+WWI72ikBkPjiKaBQxLh6TDuqGr+lPIwYM7ZiuNqlno3/8NHgMPLxqKIKScYnCCZ
+         ga7U5/wlwJfE4ojIkoWmW/5yuKhH7zY7qxnNr0VzKvaukdsLRHiNIiiRrVabzUJ1zaIW
+         0czXHtfI1BkXFeCY4PLJeWDltY3XK/uHnOipt+UYvgsJdU2CQeZLVmACNuXNVB2NnfU+
+         Dcif9yhMaKka/WvfjL3t3uPRGrRfhuJ2SlxnA9qyZzTBGAYoHYArPIPFrO/mH6z6KxiC
+         8MqtFVYRqKeSS2NhKUws2p6IBpY1GCXgWSmI/KqIvdc/WNzj4VA7B6xxoC13U9gatKh+
+         uX1A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@avasoft.com header.s=200608 header.b=xHXV0brC;
+       spf=pass (google.com: domain of bounce-94204_html-1800360348-150606-514028767-6534@bounce.s11.mc.pd25.com designates 13.111.73.160 as permitted sender) smtp.mailfrom=bounce-94204_HTML-1800360348-150606-514028767-6534@bounce.s11.mc.pd25.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=avasoft.com
+Return-Path: &lt;bounce-94204_HTML-1800360348-150606-514028767-6534@bounce.s11.mc.pd25.com&gt;
+Received: from gt160.mta.exacttarget.com (gt160.mta.exacttarget.com. [13.111.73.160])
+        by mx.google.com with ESMTPS id 6a1803df08f44-87ffcc36affsi12899846d6.768.2025.10.28.21.36.35
+        for &lt;vaishnavinerella88@gmail.com&gt;
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 28 Oct 2025 21:36:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-94204_html-1800360348-150606-514028767-6534@bounce.s11.mc.pd25.com designates 13.111.73.160 as permitted sender) client-ip=13.111.73.160;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@avasoft.com header.s=200608 header.b=xHXV0brC;
+       spf=pass (google.com: domain of bounce-94204_html-1800360348-150606-514028767-6534@bounce.s11.mc.pd25.com designates 13.111.73.160 as permitted sender) smtp.mailfrom=bounce-94204_HTML-1800360348-150606-514028767-6534@bounce.s11.mc.pd25.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=avasoft.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=avasoft.com; h=From:To:Subject:Date:List-Help:MIME-Version:List-Unsubscribe: List-Unsubscribe-Post:Reply-To:Message-ID:Content-Type; i=recruitment@avasoft.com; bh=j4/AYJfdgroX8ZTGhC6kL9fKA8+YBEQYUoiUBGfrIqU=; b=xHXV0brCL14rN4oLjlR1YRZCmL+waNfenIkm7K6FNIcY9CQIxjRtGv0cjPgheux6vmpGTzac+fSP
+   seJt040w7pEVs3T7m8YDNXQStCfb9x1o4Y+xm59Ldw2/Iy/+N5VVNZprCtuU7nPv5WunykYC5mkp
+   Ve1lHqEmVeClGVymcyM=
+Received: by gt160.mta.exacttarget.com id h06ct62fmd4i for &lt;vaishnavinerella88@gmail.com&gt;; Wed, 29 Oct 2025 04:36:33 +0000 (envelope-from &lt;bounce-94204_HTML-1800360348-150606-514028767-6534@bounce.s11.mc.pd25.com&gt;)
+From: HR Team &lt;recruitment@avasoft.com&gt;
+To: &lt;vaishnavinerella88@gmail.com&gt;
+Subject: AVASOFT- Trainee HR Executive - Application Status
+Date: Tue, 28 Oct 2025 22:36:33 -0600
+List-Help: &lt;https://cl.s11.exct.net/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1MTQwMjg3NjciLCJzIjoiMTgwMDM2MDM0OCIsImxpZCI6Ijk0MjA0IiwiaiI6IjE1MDYwNiIsImpiIjoiNjUzNCIsImQiOiIxMTAwNTIifQ.VYuxI3gDSCB4Zm64A6QEy0y0Q1LD_BWjBbfjLHF9ZiU&gt;
+MIME-Version: 1.0
+x-messageKey: undelivered+1025343+844717109@pd25.com
+X-Delivery: Transactional
+X-SFMC-Stack: 11
+x-job: 514028767_150606
+List-Unsubscribe: &lt;https://go.avasoft.com/listUnsubscribeHeader/u/1025343/57f13d038cd68717f9d9127f9f811984e4b247438460af8801b10fee2294ff1b/844717109&gt;
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Report-Abuse-To: abuse@pd25.com
+Reply-To: recruitment@avasoft.com
+Message-ID: &lt;910f1104-6f73-40e2-8830-15f6651081f9@atl1s11mta42.xt.local&gt;
+Feedback-ID: 514028767:150606:13.111.73.160:sfmktgcld
+Content-Type: multipart/alternative; boundary=&quot;yEHZwmXHRfOG=_?:&quot;
+
+--yEHZwmXHRfOG=_?:
+Content-Type: text/plain; charset=&quot;utf-8&quot;
+Content-Transfer-Encoding: 8bit
+
+
+Dear Candidate,
+
+Thank you for your interest in the Trainee HR Executive opportunity and for taking the time to register with us.
+
+After a careful review of your registration, we regret to inform you that we are unable to consider your profile for further process. This could be due to one or more of the following reasons:
+
+	Terms and conditions not accepted during registration
+
+	Eligibility criteria not met as per the academic passing-out year requirement
+
+	Incomplete or incorrect details filled in the registration form
+
+	Profile expectations not aligning with the role requirements
+
+	Multiple registrations submitted using different email IDs
+
+	Had applied for our interview process within 6 months of appearing in an interview with us
+
+We truly appreciate the effort you put into applying and wish you the very best in your future endeavours.
+
+Regards,
+
+HR Team
+
+AVASOFT
+
+Unsubscribe
+
+https://go.avasoft.com/unsubscribeConfirm/1025343/57f13d038cd68717f9d9127f9f811984e4b247438460af8801b10fee2294ff1b/844717109
+
+ 
+
+ 
+
+
+
+--yEHZwmXHRfOG=_?:
+Content-Type: text/html; charset=&quot;utf-8&quot;
+Content-Transfer-Encoding: 8bit
+
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;&quot; /&gt;&lt;title&gt;Email Newsletter&lt;/title&gt;&lt;/head&gt;&lt;body style=&quot;font-family: Helvetica, Arial, sans-serif; font-size: 12px&quot;&gt;
+&lt;p&gt;Dear Candidate,&lt;/p&gt;
+
+&lt;p&gt;Thank you for your interest in the Trainee HR Executive opportunity and for taking the time to register with us.&lt;/p&gt;
+
+&lt;p&gt;After a careful review of your registration, we regret to inform you that we are unable to consider your profile for further process. This could be due to one or more of the following reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Terms and conditions not accepted during registration&lt;/li&gt;
+	&lt;li&gt;Eligibility criteria not met as per the academic passing-out year requirement&lt;/li&gt;
+	&lt;li&gt;Incomplete or incorrect details filled in the registration form&lt;/li&gt;
+	&lt;li&gt;Profile expectations not aligning with the role requirements&lt;/li&gt;
+	&lt;li&gt;Multiple registrations submitted using different email IDs&lt;/li&gt;
+	&lt;li&gt;Had applied for our interview process within 6 months of appearing in an interview with us&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We truly appreciate the effort you put into applying and wish you the very best in your future endeavours.&lt;/p&gt;
+
+&lt;p&gt;Regards,&lt;br&gt;
+HR Team&lt;br&gt;
+AVASOFT&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;a href=&quot;https://go.avasoft.com/unsubscribeConfirm/1025343/57f13d038cd68717f9d9127f9f811984e4b247438460af8801b10fee2294ff1b/844717109&quot; rel=&quot;nofollow,noreferrer&quot;&gt;Unsubscribe&lt;/a&gt;&amp;nbsp;&lt;br&gt;
+&lt;br&gt;
+&amp;nbsp;&lt;/p&gt;
+&lt;img alt=&quot;&quot; src=&quot;https://go.pardot.com/r/1025343/1/844717109/open/1&quot; /&gt;&lt;/body&gt;&lt;/html&gt;</pre>
+        <h2>Model Result</h2>
+        <p>Predicted Label: phishing (confidence: 50.0%)</p>
+        <h2>Authentication</h2>
+        <p>SPF: PASS | DKIM: PASS | DMARC: PASS</p>
+        <h2>URLs Found</h2>
+        <ul><li>https://cl.s11.exct.net/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1MTQwMjg3NjciLCJzIjoiMTgwMDM2MDM0OCIsImxpZCI6Ijk0MjA0IiwiaiI6IjE1MDYwNiIsImpiIjoiNjUzNCIsImQiOiIxMTAwNTIifQ.VYuxI3gDSCB4Zm64A6QEy0y0Q1LD_BWjBbfjLHF9ZiU — final: cl.s11.exct.net; age: None; issues: domain-age-unknown</li><li>https://go.avasoft.com/listUnsubscribeHeader/u/1025343/57f13d038cd68717f9d9127f9f811984e4b247438460af8801b10fee2294ff1b/844717109 — final: go.avasoft.com; age: None; issues: domain-age-unknown</li><li>https://go.avasoft.com/unsubscribeConfirm/1025343/57f13d038cd68717f9d9127f9f811984e4b247438460af8801b10fee2294ff1b/844717109 — final: go.avasoft.com; age: None; issues: domain-age-unknown</li><li>http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd — final: www.w3.org; age: None; issues: domain-age-unknown</li><li>http://www.w3.org/1999/xhtml — final: www.w3.org; age: None; issues: domain-age-unknown</li><li>https://go.avasoft.com/unsubscribeConfirm/1025343/57f13d038cd68717f9d9127f9f811984e4b247438460af8801b10fee2294ff1b/844717109 — final: go.avasoft.com; age: None; issues: domain-age-unknown</li><li>https://go.pardot.com/r/1025343/1/844717109/open/1 — final: go.pardot.com; age: None; issues: domain-age-unknown</li></ul>
+        <h2>Final Assessment</h2>
+        <p><b>MEDIUM RISK (Suspicious)</b> (score 30.0)</p>
+        </body></html>
+        

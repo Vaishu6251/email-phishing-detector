@@ -1,0 +1,19 @@
+2025-10-30 05:22 UTC | phishing | 50.0%
+2025-10-30 05:22 UTC | phishing | 50.0%
+2025-10-30 05:23 UTC | legit | 51.3%
+2025-10-30 05:32 UTC | phishing | 50.0%
+2025-10-30 06:42 UTC | legit
+2025-10-30 12:18 IST | Not Phishing | 51.3%
+2025-10-30 12:18 IST | Not Phishing | 51.3%
+2025-10-30 06:50 UTC | legit
+2025-10-30 12:22 IST | legit
+2025-10-30 12:26 IST | legit
+2025-10-30 12:27 IST | legit
+2025-10-30 12:28 IST | phishing
+2025-10-30 12:45 IST | phishing
+2025-10-30 12:51 IST | phishing
+2025-10-30 14:00 IST | phishing
+2025-10-30 14:01 IST | phishing
+2025-10-30 14:20 IST | Safe
+2025-10-30 14:22 IST | Phishing
+2025-10-30 14:34 IST | Safe

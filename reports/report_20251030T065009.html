@@ -1,0 +1,177 @@
+
+        <html><body style='font-family: Arial;'>
+        <h1>Email Phishing Detector Report</h1>
+        <p><b>Time (UTC):</b> 2025-10-30 06:50 UTC</p>
+        <h2>Result:</h2>
+        <p style='color:green;font-size:18px;'>
+        Not a phishing email.</p>
+        <h3>Authentication Details:</h3>
+        <p>SPF: PASS | DKIM: PASS | DMARC: PASS</p>
+        <hr>
+        <h3>Email Content:</h3>
+        <pre>Delivered-To: vaishnavinerella88@gmail.com
+Received: by 2002:a05:6a11:2ca5:b0:664:2ca9:e804 with SMTP id xr37csp2131548pxb;
+        Tue, 28 Oct 2025 08:36:30 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCU0N/TB5lmuaSJZGqTMDszdtCffutEroUg61cu2qENR8qY8aTsTC+fs9sP6Prj1Td62x6XfrU6OlFn1oYpvqfzD8Wg=@gmail.com
+X-Google-Smtp-Source: AGHT+IE7131vaWTu7eYMYdtrFG7xgksoadMyRkRu4QqN+wY7A8icOcDzDVGLOrl2GHMRC943psqd
+X-Received: by 2002:a05:6a20:728b:b0:334:96ed:7a75 with SMTP id adf61e73a8af0-3461cca33d6mr182593637.24.1761665789782;
+        Tue, 28 Oct 2025 08:36:29 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1761665789; cv=none;
+        d=google.com; s=arc-20240605;
+        b=iehcXpyspk940v+gXMfXqSgCZvFKK0+w6/Gy33iiMqGnvz/icZf9Rp/z7u97OEE9s0
+         OHvHFf8YVyGXtWrWbc3ug94nlU6ga0ZIG7NCA4SqUsQoqLvaQk7kBnMsUV7aWLztXrE1
+         M4BIWFzFI0p4H7k6bvNz2UUmdMkZX90dq+WPVB0sDS0g/0FaU1+x8oWJeDBQVEiHT7cJ
+         U64TltuBLcr+0QyxLaxXlw1h8Yp3yKeR+Fcmyu1/pGL10Wb+ePwHVmAMG/9oIEEdjemc
+         xx8Es79XDIY1f1jIfTtwQivDXi7zM+D9TeLR4iTBoi0Ng1qADElMzzeGOvubU/J1EB/7
+         QGog==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=date:from:message-id:subject:mime-version:dkim-signature;
+        bh=ftLqtkMotlIez2WctQomo+PCS3EvRsfY824ZhV1X4mY=;
+        fh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
+        b=CKJKsq2cTIjgi7rY4AluVeNifEwrX3d0BF8LLcgZLEwimqHryoYQzmevvkmwwtTmhf
+         XNAZO1Vrtu114q8/WsY5JF/VFSLe0fUCJfpyAyqUnI3tL/yabBM2cGwNEIsSNo/WSWdT
+         29nliVpaJ45OipsU1TlTJUs5tU4SUGBSAU3bBJSO8QOOB02XkAltWs0dhpIMZU8d1Gxg
+         aTcvGLzumAnu8mvvaWre6Dx7EK3XRzznkZiE596ikWz19mXHr49mSzZA0JC/3AW5TR3I
+         Q45UDVOZgnrRn73wZfTUKLN3CWL+j/U0iuhInvptguBXP9DbwoC8n3Y+CRjh1xkaxNlZ
+         tI3A==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@tcs.com header.s=default2048 header.b=PfND3dL9;
+       spf=pass (google.com: domain of careers@tcs.com designates 219.64.34.164 as permitted sender) smtp.mailfrom=Careers@tcs.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tcs.com
+Return-Path: &lt;Careers@tcs.com&gt;
+Received: from inmumgs02.tcs.com (inmumgs02.tcs.com. [219.64.34.164])
+        by mx.google.com with ESMTP id 41be03b00d2f7-b71f6498977si5025556a12.1314.2025.10.28.08.36.24
+        for &lt;vaishnavinerella88@gmail.com&gt;;
+        Tue, 28 Oct 2025 08:36:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of careers@tcs.com designates 219.64.34.164 as permitted sender) client-ip=219.64.34.164;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@tcs.com header.s=default2048 header.b=PfND3dL9;
+       spf=pass (google.com: domain of careers@tcs.com designates 219.64.34.164 as permitted sender) smtp.mailfrom=Careers@tcs.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=tcs.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+  d=tcs.com; i=@tcs.com; q=dns/txt; s=default2048;
+  t=1761685584; x=1793221584;
+  h=mime-version:subject:message-id:from:date;
+  bh=ftLqtkMotlIez2WctQomo+PCS3EvRsfY824ZhV1X4mY=;
+  b=PfND3dL9XFNP/gKzqqcgyXqFCRKIdJzwy4eUELHYuzZC93KwVGXCU4QK
+   X/p7GqsP7xoYWTKftUnLOcnJ24AuMe8gFzLixeyT44cJwMtw424udTRPH
+   6ArnET/WPMaHyJN9StDUlI2zd7iEJrT+eN4MmBWQ0COHmRDykJ5SEl3s3
+   N2RuhggAwZPtzQNDwu06K2Xl7Uq/t6gx/17POKVDG8j1SSmaxVrCfm9gB
+   +TdqA8/P4E7IUrP9e7HvFeVpIWQdOWo3QSOgW8bE64oxlauLANG0jgpgV
+   jJVaJjr3Aqvuxa7FwqazU0nvOQb0b+x//bhpd5Ew1aOY4kFMQzrBs7g98
+   w==;
+X-CSE-ConnectionGUID: Dli/ACi6QWeTZDA5ehSByg==
+X-CSE-MsgGUID: yjDwYddgQaiQvnBcpCsKHw==
+X-IronPort-AV: E=Sophos;i=&quot;6.10,1,1719878400&quot;;
+    d=&quot;xml&#x27;?bin&#x27;?xlsx&#x27;72,48?rels&#x27;72,48?scan&#x27;72,48,208,145,72,48?pdf&#x27;72,48,208,145,72,48&quot;;a=&quot;32527904&quot;
+MIME-Version: 1.0
+Subject: The stage is set for TCS CodeVita Season 13 Round 1 Qualifiers for Zone 2 starts soon.
+X-KeepSent: 90C59D62:56C3A5AF-65258D31:0046991F; type=4; name=$KeepSent
+X-Mailer: IBM Notes Release 9.0.1 October 14, 2013
+Message-ID: &lt;OF07E05B9C.84609B7A-ON65258D31.0046987B-65258D31.00469920@tcs.com&gt;
+From: TCS Careers &lt;Careers@tcs.com&gt;
+Date: Tue, 28 Oct 2025 18:21:07 +0530
+X-MIMETrack: Serialize by Router on InMumM04/TCS(Release 12.0.2FP5 HF13|December 15, 2024) at 28-10-2025 20:57:16
+Content-Type: multipart/mixed; boundary=&quot;=_mixed 0046990F65258D31_=&quot;
+Bcc: vaishnavinerella88@gmail.com
+
+--=_mixed 0046990F65258D31_=
+Content-Type: multipart/related; boundary=&quot;=_related 0046990F65258D31_=&quot;
+
+--=_related 0046990F65258D31_=
+Content-Type: multipart/alternative; boundary=&quot;=_alternative 0046990F65258D31_=&quot;
+
+--=_alternative 0046990F65258D31_=
+Content-Type: text/plain; charset=&quot;US-ASCII&quot;
+
+Hi
+
+The time for the ultimate coding battle is here. Qualifiers start soon. 
+Contestants, this is your time to code. 
+
+Zone 2: Hyderabad | Delhi | Lucknow | Varanasi | Indore | Mumbai 
+
+
+Contest start: Friday, 31 Oct, 2025 03:00 PM IST 
+Contest end: Saturday, 1 Nov, 2025 03:00 PM IST 
+
+Log in at assigned time and date to participate: 
+https://codevita.tcsapps.com/
+
+
+
+
+ May the best coder advance. 
+
+Thanks and Regards
+Tata Consultancy Services
+=====-----=====-----=====
+Notice: The information contained in this e-mail
+message and/or attachments to it may contain
+confidential or privileged information. If you are
+not the intended recipient, any dissemination, use,
+review, distribution, printing or copying of the
+information contained in this e-mail message
+and/or attachments to it are strictly prohibited. If
+you have received this communication in error,
+please notify us by reply e-mail or telephone and
+immediately and permanently delete the message
+and any attachments. Thank you
+
+--=_alternative 0046990F65258D31_=
+Content-Type: text/html; charset=&quot;US-ASCII&quot;
+
+&lt;font size=2 face=&quot;Calibri&quot;&gt;Hi&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;font size=2 face=&quot;Calibri&quot;&gt;The time for the ultimate coding battle
+is here. Qualifiers start soon. Contestants, this is your time to code.&amp;nbsp;&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;font size=3 face=&quot;Calibri&quot;&gt;&lt;b&gt;Zone 2: Hyderabad | Delhi | Lucknow
+| Varanasi | Indore | Mumbai&amp;nbsp;&lt;/b&gt;&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;font size=2 face=&quot;Calibri&quot;&gt;Contest start: Friday, 31 Oct, 2025 03:00
+PM IST&amp;nbsp;&lt;/font&gt;
+&lt;br&gt;&lt;font size=2 face=&quot;Calibri&quot;&gt;Contest end: Saturday, 1 Nov, 2025 03:00
+PM IST&amp;nbsp;&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;font size=2 face=&quot;Calibri&quot;&gt;Log in at assigned time and date to participate:
+&lt;/font&gt;&lt;a href=https://codevita.tcsapps.com/ target=_blank&gt;&lt;font size=2 color=blue face=&quot;Calibri&quot;&gt;&lt;u&gt;https://codevita.tcsapps.com/&lt;/u&gt;&lt;/font&gt;&lt;/a&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;img src=cid:_2_0BF03C080BF0399C0046990F65258D31 style=&quot;border:0px solid;&quot;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;font size=2 face=&quot;Calibri&quot;&gt;&amp;nbsp;May the best coder advance.&amp;nbsp;&lt;/font&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;font size=2 face=&quot;Calibri&quot;&gt;Thanks and Regards&lt;/font&gt;
+&lt;br&gt;&lt;font size=2 face=&quot;Calibri&quot;&gt;Tata Consultancy Services&lt;/font&gt;
+&lt;br&gt;=====-----=====-----=====&lt;br&gt;Notice: The information contained in this e-mail&lt;br&gt;message and/or attachments to it may contain&lt;br&gt;confidential or privileged information. If you are&lt;br&gt;not the intended recipient, any dissemination, use,&lt;br&gt;review, distribution, printing or copying of the&lt;br&gt;information contained in this e-mail message&lt;br&gt;and/or attachments to it are strictly prohibited. If&lt;br&gt;you have received this communication in error,&lt;br&gt;please notify us by reply e-mail or telephone and&lt;br&gt;immediately and permanently delete the message&lt;br&gt;and any attachments. Thank you
+--=_alternative 0046990F65258D31_=--
+--=_related 0046990F65258D31_=
+Content-Type: image/jpeg
+Content-ID: &lt;_2_0BF03C080BF0399C0046990F65258D31&gt;
+Content-Transfer-Encoding: base64
+
+
+--=_related 0046990F65258D31_=--
+--=_mixed 0046990F65258D31_=
+Content-Type: application/octet-stream; name=&quot;TCS CodeVita 13 FAQs, Instructions and Best Practices (1).pdf&quot;
+Content-Disposition: attachment; filename=&quot;TCS CodeVita 13 FAQs, Instructions and Best Practices (1).pdf&quot;
+Content-Transfer-Encoding: base64
+
+
+--=_mixed 0046990F65258D31_=
+Content-Type: application/octet-stream; name=&quot;Query Resolution Template 2025 - Round 1 CodeVita Season 13 (2) (1).xlsx&quot;
+Content-Disposition: attachment; filename=&quot;Query Resolution Template 2025 - Round 1 CodeVita Season 13 (2) (1).xlsx&quot;
+Content-Transfer-Encoding: base64
+
+
+--=_mixed 0046990F65258D31_=
+Content-Type: application/octet-stream; name=&quot;TCS CodeVita 13 Languages, Compilers, and Interpreters.pdf&quot;
+Content-Disposition: attachment; filename=&quot;TCS CodeVita 13 Languages, Compilers, and Interpreters.pdf&quot;
+Content-Transfer-Encoding: base64
+
+</pre>
+        </body></html>
+        
