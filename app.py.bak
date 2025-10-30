@@ -1,0 +1,115 @@
+import streamlit as st
+import joblib
+from datetime import datetime
+import os
+import html
+import re
+
+def check_email_authentication(headers_text):
+    spf = re.search(r"spf=(\w+)", headers_text)
+    dkim = re.search(r"dkim=(\w+)", headers_text)
+    dmarc = re.search(r"dmarc=(\w+)", headers_text)
+
+    spf_result = spf.group(1).upper() if spf else "UNKNOWN"
+    dkim_result = dkim.group(1).upper() if dkim else "UNKNOWN"
+    dmarc_result = dmarc.group(1).upper() if dmarc else "UNKNOWN"
+
+    # Simple scoring logic
+    if "PASS" in [spf_result, dkim_result, dmarc_result]:
+        auth_score = "Likely Safe"
+    else:
+        auth_score = "Suspicious"
+
+    return {
+        "SPF": spf_result,
+        "DKIM": dkim_result,
+        "DMARC": dmarc_result,
+        "Result": auth_score
+    }
+
+# Load model and vectorizer
+model = joblib.load("reports/phishing_model.pkl")
+vectorizer = joblib.load("reports/vectorizer.pkl")
+
+# Ensure reports folder exists
+os.makedirs("reports", exist_ok=True)
+HISTORY_FILE = "reports/analysis_history.txt"
+
+st.title("📧 Email Phishing Detection System")
+st.write("Paste an email or message and click Analyze. You can save the result as an HTML report.")
+
+email_text = st.text_area("✉️ Paste email content here:")
+
+if st.button("🔍 Analyze"):
+    if email_text.strip() == "":
+        st.warning("Please enter some text first!")
+    else:
+        vec = vectorizer.transform([email_text])
+        pred = model.predict(vec)[0]
+
+        # Get probability (if available)
+        prob = None
+        try:
+            probs = model.predict_proba(vec)[0]
+            classes = list(model.classes_)
+            idx = classes.index(pred)
+            prob = probs[idx]
+        except Exception:
+            prob = None
+
+        # Show result
+        if pred == "phishing":
+            st.error(f"🚨 Phishing detected! (Label: {pred})")
+        else:
+            st.success(f"✅ Legitimate email detected! (Label: {pred})")
+
+        if prob is not None:
+            st.info(f"Confidence: {prob*100:.1f}%")
+
+        # Prepare HTML report
+        now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+        report_html = f"""
+        <html><body style='font-family: Arial;'>
+        <h1>Email Phishing Detector Report</h1>
+        <p><b>Time (UTC):</b> {html.escape(now)}</p>
+        <h2>Input</h2>
+        <pre>{html.escape(email_text)}</pre>
+        <h2>Result</h2>
+        <p><b>Predicted Label:</b> {html.escape(pred)}</p>
+        <p><b>Confidence:</b> {round((prob or 0)*100,1)}%</p>
+        </body></html>
+        """
+
+        # Save to history
+        entry = f"{now} | {pred} | {round((prob or 0)*100,1)}%\n"
+        try:
+            with open(HISTORY_FILE, "a", encoding="utf-8") as hf:
+                hf.write(entry)
+        except Exception as e:
+            st.warning("Could not write to history: " + str(e))
+
+        # Save HTML report button
+        if st.button("💾 Save HTML Report"):
+            safe_ts = datetime.utcnow().strftime("%Y%m%dT%H%M%S")
+            fname = f"reports/report_{safe_ts}.html"
+            try:
+                with open(fname, "w", encoding="utf-8") as f:
+                    f.write(report_html)
+                st.success(f"Saved report to {fname}")
+                st.markdown(f"[Open report file]({fname})")
+            except Exception as e:
+                st.error("Could not save report: " + str(e))
+
+# Show analysis history
+st.write("---")
+st.subheader("Recent Analyses (History)")
+if os.path.exists(HISTORY_FILE):
+    try:
+        with open(HISTORY_FILE, "r", encoding="utf-8") as hf:
+            lines = hf.readlines()[-10:]
+        for ln in reversed(lines):
+            st.write(ln.strip())
+    except Exception as e:
+        st.write("Could not read history:", e)
+else:
+    st.write("No history yet. Saved reports will add entries here.")
